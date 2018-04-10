@@ -59,4 +59,6 @@ $(document).ready(function() {
 
   setTimeout(calcHeight, 200);
   $(window).on('resize', calcHeight);
+
+  $(".release-play-button").modalVideo();
 });
