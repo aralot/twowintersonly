@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  var slides = $('.slide');
+  var slides = $('.slides-item');
   var currentIndex = 0;
 
-  var prevButton = $('.slide-control-prev');
-  var nextButton = $('.slide-control-next');
+  var prevButton = $('.slides-control-prev');
+  var nextButton = $('.slides-control-next');
 
   var checkDisabled = function() {
     if ((currentIndex + 1) > (slides.length - 1)) {
@@ -49,13 +49,6 @@ $(document).ready(function() {
   navLink.on("click", function() {
     navList.toggle();
   });
-
-  var releaseMarginTop = $('.slide .release');
-
-  function calcHeight() {
-    var headerHeight = $('.header').height();
-    releaseMarginTop.css('margin-top', headerHeight + 40);
-  }
 
   setTimeout(calcHeight, 200);
   $(window).on('resize', calcHeight);

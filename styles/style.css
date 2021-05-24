@@ -2,84 +2,81 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,300,400,500');
 @import url('font-awesome.min.css');
 
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
 }
+
 html {
   font: 300 16px/1.4 'Fira Sans', sans-serif;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  }
+}
+
 body {
   margin: 0;
   background: #000;
   color: #fff;
-  }
+}
+
 a {
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-decoration: none;
   outline: none;
-  }
+}
+
 a:hover {
   color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.5);
-  }
+}
+
 p {
   margin: 20px 0;
-  }
+}
+
 h1, h2 {
   margin: 0;
   font-weight: 400;
 }
+
 h2 {
-  margin: 0;
-  font-size: 24px;
+  margin-bottom: 20px;
+  font-size: 30px;
 }
 
-/* Page */
-.page-wrapper {
-  position: relative;
-  overflow-x: hidden;
-  height: 100%;
-}
 .page {
-  position: relative;
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-.page.main {
-  display: block;
-  width: auto;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
-/* Header */
 .header {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
+  flex: 0 0 auto;
+  padding: 30px 20px;
   text-align: center;
 }
-.header .logo-title-svg,
-.header .logo-title {
-  width: 336px;
-  height: 26px;
-}
-.header .logo-title {
+
+.header-logo {
+  width: 260px;
+  height: 19px;
   position: relative;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 10px;
   font-size: 0;
 }
-.header .logo-title:before {
+
+@media screen and (min-width: 1024px) {
+  .header-logo {
+    width: 540px;
+    height: 42px;
+  }
+}
+
+.header-logo:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -90,109 +87,141 @@ h2 {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.header .logo-title a {
+
+.header-logo a {
   position: relative;
   display: block;
   height: 100%;
   border: none;
 }
-.header .logo-subtitle {
-  margin: 0 0 10px 0;
-  font-size: 14px;
+
+.header-title {
+  margin: 0 0 30px 0;
+  font-size: 13px;
 }
 
-/* Nav */
+@media screen and (min-width: 1024px) {
+  .header-title {
+    font-size: 18px;
+  }
+}
+
+.header-slogan {
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-slogan {
+    max-width: 800px;
+    font-size: 20px;
+  }
+}
+
 .nav {
-  position: relative;
+  overflow-y: auto;
+  margin-bottom: 30px;
   text-align: center;
   font-size: 18px;
+  font-weight: 400;
 }
+
 .nav-list {
-  display: none;
-  position: absolute;
-  top: -7px;
-  left: -20px;
-  right: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
   margin: 0;
-  padding: 37px 0 7px 0;
   background-color: rgba(0, 0, 0, 0.9);
 }
+
 .nav-item {
+  position: relative;
+  padding: 0 20px;
   margin-bottom: 5px;
 }
-.nav-item.selected {
-  opacity: 0.5;
+
+.nav-item::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  content: '';
+  width: 2px;
+  height: 2px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
+
+.nav-item:last-child::after {
+  display: none;
+}
+
+.nav-item.selected {
+  color: #999;
+}
+
 .nav-item.selected a {
   border-bottom: none;
   color: rgba(255, 255, 255, 0.7);
 }
-.nav .fa-bars {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 10px;
-  border-bottom: none;
-  font-size: 24px;
+
+.main {
+  flex: 1 0 auto;
+  padding-bottom: 20px;
 }
 
-/* Slogan */
-.slogan {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 16px;
-}
-
-/* Article */
 .article {
-  padding: 130px 20px 70px 20px;
+  padding: 0 20px 20px 20px;
 }
+
+@media screen and (min-width: 1024px) {
+  .article {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+}
+
 .article-img {
   display: block;
   width: 100%;
   margin-bottom: 1.25rem;
 }
 
-/* Slides */
 .slides {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-.slide {
   position: relative;
+  padding: 0 30px;
+}
+
+.slides-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slides-item {
+  position: relative;
+  flex: 0 0 100%;
   transition: margin 0.3s ease-out;
   text-align: center;
-  flex: 1 0 100%;
-  padding-bottom: 70px;
 }
-.slide:before {
+
+.slides-controls {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: '';
-  background-size: cover;
-  opacity: 0.3;
-}
-.slide-bitsa:before {
-  background-image: url('../images/bitsa/bitsa.jpg');
-}
-.slide-room:before {
-  background-image: url('../images/room/room.jpg');
-}
-.slide-two:before {
-  background-image: url('../images/two/two.jpg');
-}
-.slide-controls {
-  position: absolute;
-  top: 450px;
+  top: 200px;
   left: 10px;
   right: 10px;
 }
-.slide-control {
+
+@media screen and (min-width: 1024px) {
+  .slides-controls {
+    top: 130px;
+  }
+}
+
+.slides-control {
   position: absolute;
   top: 0;
   background: none;
@@ -202,41 +231,66 @@ h2 {
   padding: 0;
   z-index: 2;
 }
-.slide-control:before {
+
+@media screen and (min-width: 1024px) {
+  .slides-control {
+    padding: 8px;
+  }
+}
+
+.slides-control:before {
   display: inline-block;
   vertical-align: top;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   content: '';
   border: solid #fff;
   border-width: 0 2px 2px 0;
 }
-.slide-control-next {
+
+.slides-control-next {
   left: 0;
   padding: 5px 0 5px 0;
 }
-.slide-control-prev {
+
+@media screen and (min-width: 1024px) {
+  .slides-control-next {
+    left: 12px;
+  }
+}
+
+.slides-control-prev {
   right: 0;
   padding: 5px 0 5px 0;
 }
-.slide-control-next:before {
+
+@media screen and (min-width: 1024px) {
+  .slides-control-prev {
+    right: 12px;
+  }
+}
+
+.slides-control-next:before {
   transform: rotate(135deg);
 }
-.slide-control-prev:before {
+
+.slides-control-prev:before {
   transform: rotate(-45deg);
 }
-.slide-control:hover:before {
+
+.slides-control:hover:before {
   border-color: rgba(255, 255, 255, 0.5);
 }
-.slide-control[disabled] {
+
+.slides-control[disabled] {
   opacity: 0.2;
   pointer-events: none;
 }
-.slide-control[disabled]:hover:before {
+
+.slides-control[disabled]:hover:before {
   border-color: #fff;
 }
 
-/* Release */
 .release {
   position: relative;
   display: inline-block;
@@ -244,40 +298,72 @@ h2 {
   z-index: 1;
   text-align: center;
 }
+
+@media screen and (min-width: 1024px) {
+  .slides .release {
+    text-align: left;
+  }
+}
+
 .release-header {
   display: inline-block;
   vertical-align: top;
   text-align: left;
 }
+
 .release-caption {
   margin: 0;
   font-size: 16px;
-
-display: none;
-
+  display: none;
 }
+
+@media screen and (min-width: 1024px) {
+  .release-caption {
+    font-size: 18px;
+  }
+}
+
 .release-title {
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
 }
+
 .release-title a {
   border-bottom: none;
 }
+
 .release-title a:hover {
   color: rgba(255, 255, 255, 0.8);
 }
+
 .release-additional {
   margin: 0 0 10px 0;
   font-size: 14px;
 }
+
 .release-info {
   margin-bottom: 20px;
   font-size: 16px;
 }
+
+@media screen and (min-width: 1024px) {
+  .release-info {
+    overflow: hidden;
+  }
+}
+
 .release-info-desc {
   position: relative;
 }
+
+@media screen and (min-width: 1024px) {
+  .release-info-desc {
+    overflow: hidden;
+    padding-left: 20px;
+  }
+}
+
 .release-info-desc ol {
   display: inline-block;
   padding: 0;
@@ -287,46 +373,89 @@ display: none;
   white-space: nowrap;
   text-align: left;
 }
+
 .release-info-desc ol li {
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
+
 .release-info-desc ol li:before {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
   content: counter(item);
   counter-increment: item;
-  color: #666;
+  color: #999;
 }
+
+.release-info-desc ol li a {
+  border-bottom: none;
+}
+
 .release-info-desc ol li .duration {
   position: absolute;
   top: 0;
   right: 0;
-  color: #666;
+  color: #999;
 }
+
 .release-info-text {
   margin: 10px 0 15px 0;
   font-size: 14px;
-  color: #666;
+  color: #999;
 }
+
 .release-info-cover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 10px;
 }
+
+@media screen and (min-width: 1024px) {
+  .release-info-cover {
+    float: left;
+    padding: 0;
+    text-align: center;
+  }
+}
+
 .release-info-cover a {
   position: relative;
   display: block;
   border: none;
 }
+
 .release-info-cover img {
   display: block;
   width: 100%;
   transition: all 0.2s ease;
 }
+
+@media screen and (min-width: 1024px) {
+  .release-info-cover img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.release-track {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .release-link {
   border-bottom: none;
 }
+
+@media screen and (min-width: 1024px) {
+  .release-link:hover img {
+    transform: scale(1.1);
+    transition: transform 5s ease-out;
+  }
+
+  .release-link img {
+    transition: transform .5s ease-out;
+  }
+}
+
 .release-info-cover .fa-search-plus {
   position: absolute;
   top: 50%;
@@ -336,25 +465,31 @@ display: none;
   opacity: 0;
   transition: all 0.5s ease;
 }
+
 .release-footer {
   font-size: 14px;
 }
+
 .release-footer-text {
   margin: 0 0 15px 0;
   color: #999;
 }
+
 .release-footer-download {
   overflow: hidden;
   margin: 0;
   color: #fff;
 }
+
 .release-footer-download-title {
   float: left;
 }
+
 .release-footer-download-links {
   overflow: hidden;
   padding-left: 5px;
 }
+
 .release-footer-download a {
   position: relative;
   display: inline-block;
@@ -362,6 +497,7 @@ display: none;
   margin: 0 0 0 20px;
   white-space: nowrap;
 }
+
 .release-footer-download .fa {
   position: absolute;
   top: 2px;
@@ -369,193 +505,70 @@ display: none;
   padding-right: 3px;
 }
 
-/* Discography */
 .discography > h2 {
   margin-bottom: 20px;
 }
+
 .discography .release {
   display: block;
   margin: 0 0 50px 0;
   text-align: left;
 }
+
 .discography .release-info-cover {
   padding: 0;
 }
+
 .discography .release-info-cover a:hover img {
   opacity: 0.7;
 }
+
 .discography .release-info-cover a:hover .fa-search-plus {
   opacity: 0.9;
 }
+
 .discography .release-info-desc {
   text-align: left;
 }
+
 .discography .release-info-desc ol {
   display: block;
 }
 
-/* Contact */
 .contact {
   text-align: center;
 }
+
 .contact-wrap {
   display: inline-block;
   text-align: left;
 }
 
-/* Footer */
 .footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
+  flex: 0 0 auto;
+  padding-bottom: 30px;
   text-align: center;
 }
 
-/* Social */
 .social {
   list-style: none;
   margin: 0;
   padding: 0;
   font-size: 0;
 }
+
 .social-item {
   display: inline-block;
   vertical-align: middle;
   font-size: 20px;
 }
+
 .social-item a {
   padding: 0 8px;
   border-bottom: none;
   opacity: 0.5;
 }
+
 .social-item a:hover {
   opacity: 1;
-}
-
-@media (min-width: 768px) {
-  .page.main {
-    display: table;
-    width: 100%;
-    height: 100%;
-  }
-  .header {
-    top: 50px;
-  }
-  .header .logo-title,
-  .header .logo-title-svg {
-    width: 540px;
-    height: 42px;
-  }
-  .header .logo-subtitle {
-    margin-bottom: 50px;
-    font-size: 18px;
-  }
-  .nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 16px;
-    text-align: left;
-  }
-  .nav-list {
-    display: block;
-    position: static;
-    padding: 0;
-    background-color: transparent;
-  }
-  .nav .fa-bars {
-    display: none;
-  }
-  .slogan {
-    font-size: 24px;
-  }
-  .slide .release {
-    margin-top: 340px !important;
-    text-align: left;
-  }
-  .release-caption {
-    font-size: 18px;
-  }
-  .release-info {
-    overflow: hidden;
-  }
-  .release-info-cover {
-    float: left;
-    padding: 0;
-    text-align: center;
-  }
-  .release-info-cover img {
-    width: 200px;
-    height: 200px;
-  }
-  .release-link:hover img {
-    transform: scale(1.1);
-    transition: transform 5s ease-out;
-  }
-  .release-link img {
-    transition: transform .5s ease-out;
-  }
-  .release-info-desc {
-    overflow: hidden;
-    padding-left: 20px;
-  }
-  .slide-controls {
-    top: 490px;
-  }
-  .slide-control {
-    padding: 8px;
-  }
-  .slide-control-prev {
-    right: 12px;
-  }
-  .slide-control-next {
-    left: 12px;
-  }
-  .slide-control:before {
-    width: 30px;
-    height: 30px;
-  }
-  .article {
-    margin: 0 auto;
-    max-width: 800px;
-    padding-top: 180px;
-  }
-}
-
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-    .slide .release {
-      text-align: left;
-    }
-    .release-caption {
-      font-size: 18px;
-    }
-    .release-info {
-      overflow: hidden;
-    }
-    .release-info-cover {
-      float: left;
-      padding: 0;
-      text-align: center;
-    }
-    .release-info-cover img {
-      width: 200px;
-      height: 200px;
-    }
-    .release-info-desc {
-      overflow: hidden;
-      padding-left: 20px;
-    }
-    .slide-controls {
-      top: 370px;
-    }
-    .article {
-      margin: 0 auto;
-      max-width: 800px;
-    }
-  }
 }
