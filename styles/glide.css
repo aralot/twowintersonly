@@ -1,0 +1,110 @@
+.glide__slides {
+  text-align: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.glide__slide {
+  scroll-snap-align: start;
+}
+
+.glide__arrows {
+  position: absolute;
+  top: 270px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+  .glide__arrows {
+    top: 210px;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+.glide__arrow {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.glide__arrow--left {
+  left: 0;
+}
+
+.glide__arrow--right {
+  right: 0;
+}
+
+.glide__arrow::before {
+  display: inline-block;
+  vertical-align: top;
+  width: 16px;
+  height: 16px;
+  content: '';
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+.glide__arrow--left:before {
+  transform: rotate(135deg);
+}
+
+.glide__arrow--right::before {
+  transform: rotate(-45deg);
+}
+
+.glide__bullets {
+  text-align: center;
+}
+
+.glide__bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0 7px;
+  background-color: transparent;
+  border: 1px solid #666;
+  border-radius: 50%;
+  font-size: 0;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .glide__bullet:hover {
+    border-color: #999;
+  }
+}
+
+.glide__bullet--active {
+  background-color: #666;
+}
+
+@media screen and (min-width: 1024px) {
+  .glide__bullet--active:hover {
+    border-color: #666;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

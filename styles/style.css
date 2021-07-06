@@ -1,6 +1,7 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,300,400,500');
 @import url('font-awesome.min.css');
+@import url('glide.css');
 
 html, body {
   width: 100%;
@@ -114,7 +115,7 @@ h2 {
 @media screen and (min-width: 1024px) {
   .header-slogan {
     max-width: 800px;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -181,7 +182,7 @@ h2 {
 
 .main {
   flex: 1 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
 }
 
 .article {
@@ -201,110 +202,6 @@ h2 {
   margin-bottom: 1.25rem;
 }
 
-.slides {
-  position: relative;
-  padding: 0 30px;
-}
-
-.slides-list {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.slides-item {
-  position: relative;
-  flex: 0 0 100%;
-  transition: margin 0.3s ease-out;
-  text-align: center;
-}
-
-.slides-controls {
-  position: absolute;
-  top: 200px;
-  left: 10px;
-  right: 10px;
-}
-
-@media screen and (min-width: 1024px) {
-  .slides-controls {
-    top: 130px;
-  }
-}
-
-.slides-control {
-  position: absolute;
-  top: 0;
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 2;
-}
-
-@media screen and (min-width: 1024px) {
-  .slides-control {
-    padding: 8px;
-  }
-}
-
-.slides-control:before {
-  display: inline-block;
-  vertical-align: top;
-  width: 16px;
-  height: 16px;
-  content: '';
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-}
-
-.slides-control-next {
-  left: 0;
-  padding: 5px 0 5px 0;
-}
-
-@media screen and (min-width: 1024px) {
-  .slides-control-next {
-    left: 12px;
-  }
-}
-
-.slides-control-prev {
-  right: 0;
-  padding: 5px 0 5px 0;
-}
-
-@media screen and (min-width: 1024px) {
-  .slides-control-prev {
-    right: 12px;
-  }
-}
-
-.slides-control-next:before {
-  transform: rotate(135deg);
-}
-
-.slides-control-prev:before {
-  transform: rotate(-45deg);
-}
-
-.slides-control:hover:before {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.slides-control[disabled] {
-  opacity: 0.2;
-  pointer-events: none;
-}
-
-.slides-control[disabled]:hover:before {
-  border-color: #fff;
-}
-
 .release {
   position: relative;
   display: inline-block;
@@ -314,15 +211,9 @@ h2 {
 }
 
 @media screen and (min-width: 1024px) {
-  .slides .release {
+  .release-header {
     text-align: left;
   }
-}
-
-.release-header {
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
 }
 
 .release-caption {
@@ -339,7 +230,7 @@ h2 {
 
 .release-title {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
 }
 
@@ -446,8 +337,8 @@ h2 {
 
 @media screen and (min-width: 1024px) {
   .release-info-cover img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
   }
 }
 
