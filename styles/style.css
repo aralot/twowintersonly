@@ -1,6 +1,7 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,300,400,500');
 @import url('font-awesome.min.css');
+@import url('glide.core.min.css');
 @import url('glide.css');
 
 html, body {
@@ -200,6 +201,13 @@ h2 {
   display: block;
   width: 100%;
   margin-bottom: 1.25rem;
+}
+
+@supports(padding: max(0px)) {
+  .slides {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
 }
 
 .release {
