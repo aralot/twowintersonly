@@ -61,6 +61,13 @@ h2 {
   text-align: center;
 }
 
+@supports(padding: max(0px)) {
+  .header {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+}
+
 .header-logo {
   width: 260px;
   height: 19px;
@@ -71,7 +78,7 @@ h2 {
   font-size: 0;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .header-logo {
     width: 540px;
     height: 42px;
@@ -102,7 +109,7 @@ h2 {
   font-size: 13px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .header-title {
     font-size: 18px;
   }
@@ -113,7 +120,7 @@ h2 {
   font-size: 16px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .header-slogan {
     max-width: 800px;
     font-size: 18px;
@@ -142,7 +149,7 @@ h2 {
   padding: 0 15px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .nav-item {
     position: relative;
     padding: 0 20px;
@@ -186,11 +193,14 @@ h2 {
   padding-bottom: 60px;
 }
 
-.article {
-  padding: 0 20px 20px 20px;
+@supports(padding: max(0px)) {
+  .main {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .article {
     margin: 0 auto;
     max-width: 800px;
@@ -200,14 +210,6 @@ h2 {
 .article-img {
   display: block;
   width: 100%;
-  margin-bottom: 1.25rem;
-}
-
-@supports(padding: max(0px)) {
-  .slides {
-    padding-left: max(20px, env(safe-area-inset-left));
-    padding-right: max(20px, env(safe-area-inset-right));
-  }
 }
 
 .release {
@@ -218,7 +220,7 @@ h2 {
   text-align: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .release-header {
     text-align: left;
   }
@@ -230,7 +232,7 @@ h2 {
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .release-caption {
     font-size: 18px;
   }
@@ -260,7 +262,13 @@ h2 {
   font-size: 16px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .release-info {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .release-info {
     overflow: hidden;
   }
@@ -270,7 +278,7 @@ h2 {
   position: relative;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .release-info-desc {
     overflow: hidden;
     padding-left: 20px;
@@ -323,7 +331,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .release-info-cover {
     float: left;
     padding: 0;
@@ -343,7 +351,7 @@ h2 {
   transition: all 0.2s ease;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .release-info-cover img {
     width: 300px;
     height: 300px;
@@ -358,7 +366,7 @@ h2 {
   border-bottom: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .release-link:hover img {
     transform: scale(1.1);
     transition: transform 5s ease-out;
@@ -461,6 +469,13 @@ h2 {
   flex: 0 0 auto;
   padding-bottom: 30px;
   text-align: center;
+}
+
+@supports(padding: max(0px)) {
+  .footer {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
 }
 
 .social {

@@ -16,7 +16,15 @@
   display: flex;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .glide__arrows {
+    top: 250px;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .glide__arrows {
     top: 210px;
     left: 20px;
@@ -75,7 +83,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .glide__bullet:hover {
     border-color: #999;
   }
@@ -85,7 +93,7 @@
   background-color: #666;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .glide__bullet--active:hover {
     border-color: #666;
   }
