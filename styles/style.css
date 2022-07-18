@@ -208,6 +208,7 @@ h2 {
 }
 
 .article-img {
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: block;
   width: 100%;
 }
