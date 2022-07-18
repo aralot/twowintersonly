@@ -343,6 +343,7 @@ h2 {
   position: relative;
   display: block;
   border: none;
+  overflow: hidden;
 }
 
 .release-info-cover img {
