@@ -1,6 +1,5 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,300,400,500');
-@import url('font-awesome.min.css');
 @import url('glide.core.min.css');
 @import url('glide.css');
 
@@ -10,7 +9,7 @@ html, body {
 }
 
 html {
-  font: 300 16px/1.4 'Fira Sans', sans-serif;
+  font: 400 15px/1.4 'Fira Sans', sans-serif;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,7 +24,7 @@ body {
 
 a {
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid transparent;
   text-decoration: none;
   outline: none;
 }
@@ -111,28 +110,29 @@ h2 {
 
 @media screen and (min-width: 768px) {
   .header-title {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
 .header-slogan {
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 15px;
+  color: #999;
 }
 
 @media screen and (min-width: 768px) {
   .header-slogan {
     max-width: 800px;
-    font-size: 18px;
   }
 }
 
 .nav {
   overflow-y: auto;
   margin-bottom: 30px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .nav-list {
@@ -229,19 +229,19 @@ h2 {
 
 .release-caption {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   display: none;
 }
 
 @media screen and (min-width: 768px) {
   .release-caption {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
 .release-title {
   margin: 0;
-  font-size: 28px;
+  font-size: 27px;
   font-weight: 500;
 }
 
@@ -255,12 +255,13 @@ h2 {
 
 .release-additional {
   margin: 0 0 10px 0;
-  font-size: 14px;
+  font-weight: 300;
+  font-size: 13px;
 }
 
 .release-info {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -282,12 +283,11 @@ h2 {
 @media screen and (min-width: 768px) {
   .release-info-desc {
     overflow: hidden;
-    padding-left: 20px;
+    padding-left: 13px;
   }
 }
 
 .release-info-desc ol {
-  display: inline-block;
   padding: 0;
   margin: 0;
   counter-reset: item;
@@ -298,32 +298,59 @@ h2 {
 
 .release-info-desc ol li {
   position: relative;
-  margin-bottom: 7px;
+  padding: 7px 100px 7px 25px;
+  border-bottom: 1px solid #1a1a1a;
 }
 
-.release-info-desc ol li:before {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-  content: counter(item);
-  counter-increment: item;
-  color: #999;
-}
-
-.release-info-desc ol li a {
+.release-info-desc ol li:last-child {
   border-bottom: none;
 }
 
-.release-info-desc ol li .duration {
+.release-info-desc ol li:before {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 7px;
+  left: 7px;
+  content: counter(item);
+  counter-increment: item;
   color: #999;
+  font-weight: 300;
+}
+
+.release-info-duration {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  color: #999;
+  font-weight: 300;
+}
+
+.release-info-desc ol li a {
+  display: block;
+  margin: -7px -7px -7px -25px;
+  padding: 7px 7px 7px 25px;
+  border-bottom: none;
+}
+
+.release-play-button:hover {
+  background-color: #1a1a1a;
+}
+
+.release-play-button::before {
+  display: none;
+}
+
+.release-play-button::after {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  content: "\f04b";
+  font-family: "FontAwesome";
+  font-size: 13px;
 }
 
 .release-info-text {
   margin: 10px 0 15px 0;
-  font-size: 14px;
+  font-size: 13px;
   color: #999;
 }
 
@@ -360,10 +387,6 @@ h2 {
   }
 }
 
-.release-track {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
 .release-link {
   border-bottom: none;
 }
@@ -379,7 +402,7 @@ h2 {
   }
 }
 
-.release-info-cover .fa-search-plus {
+.release-info-cover .fa-magnifying-glass-plus {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -390,7 +413,7 @@ h2 {
 }
 
 .release-footer {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .release-footer-text {
@@ -399,33 +422,25 @@ h2 {
 }
 
 .release-footer-download {
-  overflow: hidden;
-  margin: 0;
-  color: #fff;
+  display: flex;
+  gap: 10px;
 }
 
 .release-footer-download-title {
-  float: left;
+  color: #999;
 }
 
 .release-footer-download-links {
-  overflow: hidden;
-  padding-left: 5px;
+  display: flex;
+  gap: 10px
 }
 
-.release-footer-download a {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 0 20px;
-  white-space: nowrap;
+.release-footer-download-links a:hover {
+  border-bottom-color: transparent;
 }
 
-.release-footer-download .fa {
-  position: absolute;
-  top: 2px;
-  right: 100%;
-  padding-right: 3px;
+.release-footer-download-links a:hover .release-footer-download-brand {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .discography > h2 {
@@ -446,7 +461,7 @@ h2 {
   opacity: 0.7;
 }
 
-.discography .release-info-cover a:hover .fa-search-plus {
+.discography .release-info-cover a:hover .fa-magnifying-glass-plus {
   opacity: 0.9;
 }
 
@@ -490,7 +505,7 @@ h2 {
 .social-item {
   display: inline-block;
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .social-item a {
