@@ -201,6 +201,16 @@ h2 {
   }
 }
 
+.slides {
+  margin: 0 -20px;
+}
+
+@media screen and (min-width: 768px) {
+  .slides {
+    margin: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .article {
     margin: 0 auto;
@@ -209,7 +219,6 @@ h2 {
 }
 
 .article-img {
-  border: 1px solid rgba(255, 255, 255, 0.15);
   display: block;
   width: 100%;
 }
@@ -279,12 +288,12 @@ h2 {
 
 .release-info-desc {
   position: relative;
+  padding: 0 20px;
 }
 
 @media screen and (min-width: 768px) {
   .release-info-desc {
     overflow: hidden;
-    padding-left: 13px;
   }
 }
 
@@ -300,7 +309,13 @@ h2 {
 .release-info-desc ol li {
   position: relative;
   padding: 7px 100px 7px 25px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #262626;
+}
+
+@media screen and (min-width: 768px) {
+  .release-info-desc ol li {
+    padding: 7px 110px 7px 32px;
+  }
 }
 
 .release-info-desc ol li:last-child {
@@ -310,19 +325,31 @@ h2 {
 .release-info-desc ol li:before {
   position: absolute;
   top: 7px;
-  left: 7px;
+  left: 0;
   content: counter(item);
   counter-increment: item;
   color: #999;
   font-weight: 300;
 }
 
+@media screen and (min-width: 768px) {
+  .release-info-desc ol li:before {
+    left: 7px;
+  }
+}
+
 .release-info-duration {
   position: absolute;
   top: 7px;
-  right: 7px;
+  right: 0;
   color: #999;
   font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  .release-info-duration {
+    right: 7px;
+  }
 }
 
 .release-info-desc ol li a {
@@ -333,7 +360,7 @@ h2 {
 }
 
 .release-play-button:hover {
-  background-color: #1a1a1a;
+  background-color: #262626;
 }
 
 .release-play-button::before {
@@ -343,10 +370,16 @@ h2 {
 .release-play-button::after {
   position: absolute;
   top: 9px;
-  left: 7px;
+  left: 0;
   content: "\f04b";
   font-family: "FontAwesome";
   font-size: 13px;
+}
+
+@media screen and (min-width: 768px) {
+  .release-play-button::after {
+    left: 9px;
+  }
 }
 
 .release-info-text {
@@ -355,8 +388,13 @@ h2 {
   color: #999;
 }
 
+@media screen and (min-width: 768px) {
+  .release-info-text {
+    padding-left: 7px;
+  }
+}
+
 .release-info-cover {
-  border: 1px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 10px;
 }
 
@@ -452,6 +490,17 @@ h2 {
   display: block;
   margin: 0 0 50px 0;
   text-align: left;
+}
+
+.discography .release-info {
+  margin: 0 -20px 20px -20px;
+}
+
+@media screen and (min-width: 480px) {
+  .discography .release-info {
+    margin: 0 0 20px 0;
+  }
+  
 }
 
 .discography .release-info-cover {
