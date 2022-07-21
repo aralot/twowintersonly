@@ -1,7 +1,5 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,300,400,500');
-@import url('glide.core.min.css');
-@import url('glide.css');
 
 html, body {
   width: 100%;
@@ -34,20 +32,6 @@ a:hover {
   border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
-p {
-  margin: 20px 0;
-}
-
-h1, h2 {
-  margin: 0;
-  font-weight: 400;
-}
-
-h2 {
-  margin-bottom: 20px;
-  font-size: 30px;
-}
-
 .page {
   display: flex;
   flex-direction: column;
@@ -55,7 +39,6 @@ h2 {
 }
 
 .header {
-  flex: 0 0 auto;
   padding: 40px 20px;
   text-align: center;
 }
@@ -104,25 +87,13 @@ h2 {
 }
 
 .header-title {
-  margin: 0 0 30px 0;
+  margin: 0;
   font-size: 13px;
 }
 
 @media screen and (min-width: 768px) {
   .header-title {
     font-size: 17px;
-  }
-}
-
-.header-slogan {
-  margin: 0 auto;
-  font-size: 15px;
-  color: #999;
-}
-
-@media screen and (min-width: 768px) {
-  .header-slogan {
-    max-width: 800px;
   }
 }
 
@@ -190,7 +161,9 @@ h2 {
 }
 
 .main {
-  flex: 1 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
   padding-bottom: 50px;
 }
 
@@ -201,21 +174,36 @@ h2 {
   }
 }
 
-.slides {
-  margin: 0 -20px;
-}
-
-@media screen and (min-width: 768px) {
-  .slides {
-    margin: 0;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .article {
     margin: 0 auto;
-    max-width: 800px;
+    width: 700px;
   }
+}
+
+.article-caption {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 0 10px;
+  background-color: #fff;
+  border-radius: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 10px;
+  color: #000;
+}
+
+.article-title {
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-size: 39px;
+}
+
+.article-text {
+  margin: 20px 0 0;
+  font-size: 15px;
 }
 
 .article-img {
@@ -224,43 +212,14 @@ h2 {
 }
 
 .release {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  z-index: 1;
-  text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-  .release-header {
-    text-align: left;
-  }
-}
-
-.release-caption {
-  margin: 0;
-  font-size: 15px;
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-  .release-caption {
-    font-size: 17px;
-  }
+  margin-bottom: 100px;
 }
 
 .release-title {
-  margin: 0;
+  margin: 0 0 5px;
+  line-height: 1;
   font-size: 27px;
   font-weight: 500;
-}
-
-.release-title a {
-  border-bottom: none;
-}
-
-.release-title a:hover {
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .release-additional {
@@ -288,16 +247,16 @@ h2 {
 
 .release-info-desc {
   position: relative;
-  padding: 0 20px;
 }
 
 @media screen and (min-width: 768px) {
   .release-info-desc {
     overflow: hidden;
+    padding-left: 20px;
   }
 }
 
-.release-info-desc ol {
+.release-info-list {
   padding: 0;
   margin: 0;
   counter-reset: item;
@@ -306,44 +265,46 @@ h2 {
   text-align: left;
 }
 
-.release-info-desc ol li {
+.release-info-item {
   position: relative;
-  padding: 7px 100px 7px 25px;
+  padding: 7px 7px 7px 25px;
   border-bottom: 1px solid #262626;
 }
 
 @media screen and (min-width: 768px) {
-  .release-info-desc ol li {
-    padding: 7px 110px 7px 32px;
+  .release-info-item {
+    padding-left: 32px;
   }
 }
 
-.release-info-desc ol li:last-child {
+.release-info-item:last-child {
   border-bottom: none;
 }
 
-.release-info-desc ol li:before {
+.release-info-item::before {
   position: absolute;
-  top: 7px;
+  top: 8px;
   left: 0;
   content: counter(item);
   counter-increment: item;
   color: #999;
   font-weight: 300;
+  font-size: 13px;
 }
 
 @media screen and (min-width: 768px) {
-  .release-info-desc ol li:before {
+  .release-info-item::before {
     left: 7px;
   }
 }
 
 .release-info-duration {
   position: absolute;
-  top: 7px;
+  top: 8px;
   right: 0;
   color: #999;
   font-weight: 300;
+  font-size: 13px;
 }
 
 @media screen and (min-width: 768px) {
@@ -352,10 +313,10 @@ h2 {
   }
 }
 
-.release-info-desc ol li a {
+.release-info-item a {
   display: block;
-  margin: -7px -7px -7px -25px;
-  padding: 7px 7px 7px 25px;
+  margin: -7px -130px -7px -32px;
+  padding: 7px 130px 7px 32px;
   border-bottom: none;
 }
 
@@ -364,10 +325,10 @@ h2 {
 }
 
 .release-play-button::before {
-  display: none;
+  visibility: hidden;
 }
 
-.release-play-button::after {
+.release-play-button a::after {
   position: absolute;
   top: 9px;
   left: 0;
@@ -377,14 +338,15 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
-  .release-play-button::after {
-    left: 9px;
+  .release-play-button a::after {
+    left: 7px;
   }
 }
 
 .release-info-text {
-  margin: 10px 0 15px 0;
+  margin: 5px 0 0 0;
   font-size: 13px;
+  font-weight: 300;
   color: #999;
 }
 
@@ -395,14 +357,20 @@ h2 {
 }
 
 .release-info-cover {
-  margin-bottom: 10px;
+  margin: 0 -20px 10px -20px;
 }
 
 @media screen and (min-width: 768px) {
   .release-info-cover {
     float: left;
     padding: 0;
-    text-align: center;
+    margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .release-info-cover {
+    margin: 0;
   }
 }
 
@@ -482,58 +450,9 @@ h2 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.discography > h2 {
-  margin-bottom: 20px;
-}
-
-.discography .release {
-  display: block;
-  margin: 0 0 50px 0;
-  text-align: left;
-}
-
-.discography .release-info {
-  margin: 0 -20px 20px -20px;
-}
-
-@media screen and (min-width: 480px) {
-  .discography .release-info {
-    margin: 0 0 20px 0;
-  }
-}
-
-.discography .release-info-cover {
-  padding: 0;
-}
-
-.discography .release-info-cover a:hover img {
-  opacity: 0.7;
-}
-
-.discography .release-info-cover a:hover .fa-magnifying-glass-plus {
-  opacity: 0.9;
-}
-
-.discography .release-info-desc {
-  text-align: left;
-}
-
-.discography .release-info-desc ol {
-  display: block;
-}
-
-.contact {
-  text-align: center;
-}
-
-.contact-wrap {
-  display: inline-block;
-  text-align: left;
-}
-
 .footer {
-  flex: 0 0 auto;
-  padding-bottom: 30px;
+  display: flex;
+  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -545,24 +464,19 @@ h2 {
 }
 
 .social {
+  display: flex;
+  gap: 10px;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  font-size: 0;
-}
-
-.social-item {
-  display: inline-block;
-  vertical-align: middle;
   font-size: 17px;
 }
 
 .social-item a {
-  padding: 0 8px;
-  border-bottom: none;
   opacity: 0.5;
 }
 
 .social-item a:hover {
+  border-bottom: none;
   opacity: 1;
 }
