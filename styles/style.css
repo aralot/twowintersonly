@@ -215,6 +215,10 @@ a:hover {
   margin-bottom: 100px;
 }
 
+.release:last-child {
+  margin-bottom: 0;
+}
+
 .release-title {
   margin: 0 0 5px;
   line-height: 1;
