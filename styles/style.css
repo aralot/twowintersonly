@@ -213,6 +213,16 @@ a:hover {
 }
 
 .article-img {
+  margin: 0 -20px;
+}
+
+@media screen and (min-width: 768px) {
+  .article-img {
+    margin: 0;
+  }
+}
+
+.article-img img {
   display: block;
   width: 100%;
 }
