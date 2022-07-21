@@ -191,7 +191,7 @@ h2 {
 
 .main {
   flex: 1 0 auto;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 @supports(padding: max(0px)) {
@@ -500,7 +500,6 @@ h2 {
   .discography .release-info {
     margin: 0 0 20px 0;
   }
-  
 }
 
 .discography .release-info-cover {
@@ -555,7 +554,7 @@ h2 {
 .social-item {
   display: inline-block;
   vertical-align: middle;
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .social-item a {
