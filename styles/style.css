@@ -201,6 +201,12 @@ a:hover {
   font-size: 39px;
 }
 
+.article-subtitle {
+  margin: 20px 0 5px;
+  font-weight: 500;
+  font-size: 21px;
+}
+
 .article-text {
   margin: 20px 0 0;
   font-size: 15px;
@@ -455,9 +461,7 @@ a:hover {
 }
 
 .footer {
-  display: flex;
   padding-bottom: 40px;
-  text-align: center;
 }
 
 @supports(padding: max(0px)) {
@@ -467,13 +471,21 @@ a:hover {
   }
 }
 
+.footer-text {
+  line-height: 1;
+  text-align: center;
+  font-style: normal;
+  font-size: 13px;
+  color: #999;
+}
+
 .social {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   list-style: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-  font-size: 17px;
+  font-size: 19px;
 }
 
 .social-item a {
